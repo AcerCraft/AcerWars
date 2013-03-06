@@ -1,4 +1,4 @@
-package com.acercraft.objects;
+package com.acercraft.acerwars.objects;
 
 import java.util.ArrayList;
 import java.util.List;

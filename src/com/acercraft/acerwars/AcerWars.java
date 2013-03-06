@@ -5,8 +5,8 @@ import java.util.logging.Logger;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.acercraft.objects.Arena;
-import com.acercraft.objects.ObjectHandler;
+import com.acercraft.acerwars.objects.Arena;
+import com.acercraft.acerwars.objects.ObjectHandler;
 
 public class AcerWars extends JavaPlugin {
 	

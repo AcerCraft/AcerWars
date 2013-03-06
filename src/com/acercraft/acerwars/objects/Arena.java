@@ -1,4 +1,4 @@
-package com.acercraft.objects;
+package com.acercraft.acerwars.objects;
 
 import java.io.File;
 import java.io.IOException;
