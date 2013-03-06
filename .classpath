@@ -2,6 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/Andrew/Documents/Minecraft/Bukkit/Bukkit - Builds/bukkit-1.4.7-R1.0.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/workspace/bukkit-1.4.7-R1.1-20130206.060129-4.jar"/>
+	<classpathentry kind="lib" path="C:/Program Files (x86)/eclipse/workspace/Factions.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

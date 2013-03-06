@@ -1,27 +1,27 @@
-package com.acercraft.acerwars;
+package com.acercraft.objects;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
+import com.acercraft.acerwars.AcerWars;
+
 public class Arena {
 	AcerWars plugin;
 	// Arena Information
 	String name;
-	Location arenaTele1; // Team one enters the arena here
-	Location arenaTele2; // Team two enters the arena here
-	Location lobbyTele1; // Team one teleports to this lobby
-	Location lobbyTele2; // Team two teleports to this lobby
-	// You think we need to store the region locations for lobbys / arenas?
+	private Location arenaTele1; // Team one enters the arena here
+	private Location arenaTele2; // Team two enters the arena here
+	private Location lobbyTele1; // Team one teleports to this lobby
+	private Location lobbyTele2; // Team two teleports to this lobby
 	
-	// Information for ongoingArena
-	String status; // "Lobby" "Active" "Inactive"
-	List<String> teamOne; // All players from team one
-	List<String> teamTwo; // All players from team two
+	private Location min; // One corner
+	private Location max; // Other corner
+	
+	private War war; // The war going on in the arena, or null if arena is open
 	
 	public Arena(AcerWars plugin, String name) {
 		this.plugin = plugin;

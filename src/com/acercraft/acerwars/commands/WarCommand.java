@@ -1,4 +1,4 @@
-package com.acercraft.acerwars;
+package com.acercraft.acerwars.commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
