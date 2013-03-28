@@ -15,12 +15,8 @@ public class AcerPlayer {
 		this.name = name;
 	}
 	
-	public void setFaction(Faction f) {
-		this.faction = f;
-	}
-	
 	public Faction getFaction() {
-		return faction;
+		return getFactionPlayer().getFaction();
 	}
 	
 	public War getWar() {
