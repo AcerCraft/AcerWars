@@ -17,6 +17,7 @@ public class War {
 	private List<AcerPlayer> f1Players = new ArrayList<AcerPlayer>();
 	private List<AcerPlayer> f2Players = new ArrayList<AcerPlayer>();
 	
+	
 	public War(Faction f1, Faction f2, int perSide, Arena arena) {
 		f1 = this.f1;
 		f2 = this.f2;

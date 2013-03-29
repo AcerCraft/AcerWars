@@ -8,6 +8,7 @@ import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
 import com.acercraft.acerwars.AcerWars;
+import com.acercraft.acerwars.util.Util;
 
 public class Arena {
 	AcerWars plugin;
@@ -43,9 +44,6 @@ public class Arena {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		FileConfiguration yml = YamlConfiguration.loadConfiguration(file);
-		
-		// Set defaults for arena file
 	}
 	
 	public void loadFromFile() {
@@ -54,8 +52,81 @@ public class Arena {
 		File file = new File("plugins/AcerWars/Arenas/" + name + ".yml");
 		FileConfiguration yml = YamlConfiguration.loadConfiguration(file);
 		
-		 // Set all variables in equal to those retrieved from config
+		min = Util.parseLocation(yml.getString("min"));
+		max = Util.parseLocation(yml.getString("max"));
+		
+		arenaTele1 = Util.parseLocation(yml.getString("tele1"));
+		arenaTele2 = Util.parseLocation(yml.getString("tele2"));
+		
+		lobbyTele1 = Util.parseLocation(yml.getString("lobbyTele1"));
+		lobbyTele2 = Util.parseLocation(yml.getString("lobbyTele2"));
 	}
 	
-	// Add set / get methods for each variable
+	public void saveToFile() {
+		if(!hasFile()) createNewFile();
+		
+		File file = new File("plugins/AcerWars/Arenas/" + name + ".yml");
+		FileConfiguration yml = YamlConfiguration.loadConfiguration(file);
+		
+		yml.set("min", Util.formatLocation(min));
+		yml.set("max", Util.formatLocation(max));
+		
+		yml.set("tele1", Util.formatLocation(arenaTele1));
+		yml.set("tele2", Util.formatLocation(arenaTele2));
+		
+		yml.set("lobbyTele2", Util.formatLocation(lobbyTele1));
+		yml.set("lobbyTele2", lobbyTele2);
+		
+		try {
+			yml.save(file);
+		} catch (IOException e) {
+			AcerWars.log.severe("Failed to save arena file for: " + name);
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean hasWar() {
+		if(war == null) return false;
+		return true;
+	}
+	
+	public void setWar(War war) {
+		this.war = war;
+	}
+	
+	public War getWar() {
+		return war;
+	}
+	
+	public void setArenaTele1(Location loc) {
+		arenaTele1 = loc;
+	}
+	
+	public Location getArenaTele1() {
+		return arenaTele1;
+	}
+	
+	public void setArenaTele2(Location loc) {
+		arenaTele2 = loc;
+	}
+	
+	public Location getArenaTele2() {
+		return arenaTele2;
+	}
+	
+	public void setLobbyTele1(Location loc) {
+		lobbyTele1 = loc;
+	}
+	
+	public Location getLobbyTele1() {
+		return lobbyTele1;
+	}
+	
+	public void setLobbyTele2(Location loc) {
+		lobbyTele2 = loc;
+	}
+	
+	public Location getLobbyTele2() {
+		return lobbyTele2;
+	}
 }

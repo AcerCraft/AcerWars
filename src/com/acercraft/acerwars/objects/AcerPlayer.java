@@ -9,7 +9,6 @@ import com.massivecraft.factions.Faction;
 
 public class AcerPlayer {
 	private String name;
-	private Faction faction;
 	private War war;
 	public AcerPlayer(String name) {
 		this.name = name;
@@ -36,7 +35,7 @@ public class AcerPlayer {
 	}
 	
 	public boolean hasFaction() {
-		if(faction == null) return false;
+		if(getFactionPlayer().getFaction() == null) return false;
 		return true;
 	}
 }

@@ -6,11 +6,11 @@ import org.bukkit.World;
 
 public class Util {
 	
-	public String formatLocation(Location loc) {
+	public static String formatLocation(Location loc) {
 		return "x" + loc.getX() + "y" + loc.getY() + "z" + loc.getZ() + "pitch" + loc.getPitch() + "yaw" + loc.getYaw() + "world" + loc.getWorld().getName();
 	}
 	
-	public Location parseLocation(String s) {
+	public static Location parseLocation(String s) {
 		String xs = s.substring(1, s.indexOf("y"));
 		String ys = s.substring(s.indexOf("y"), s.indexOf("z"));
 		String zs = s.substring(s.indexOf("z"), s.indexOf("pitch"));
